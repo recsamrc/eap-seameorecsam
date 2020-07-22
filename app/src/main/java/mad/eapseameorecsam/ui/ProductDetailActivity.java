@@ -66,6 +66,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         TextView price = findViewById(R.id.txt_price);
         TextView totalRate = findViewById(R.id.total_rate);
         TextView averageRate = findViewById(R.id.average_rate);
+        TextView views = findViewById(R.id.views);
 
         img.setImageURI(Uri.parse(product.getImageUrl()));
         name.setText(product.getName());
@@ -74,6 +75,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         price.setText("" + product.getPrice() + "$");
         totalRate.setText("( " + product.getTotalRate() + " in total )");
         averageRate.setText("" +product.getAverageRate());
+        views.setText("" + product.getTotalView() + " views");
     }
 
 }
