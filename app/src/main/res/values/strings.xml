@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">EapSeameorecsam</string>
     <string name="placeholder">Text Here</string>
+    <string name="search_fragment">This is search fragment</string>
+    <string name="categories_fragment">This is categories fragment</string>
+    <string name="account_fragment">This is account fragment</string>
 </resources>
