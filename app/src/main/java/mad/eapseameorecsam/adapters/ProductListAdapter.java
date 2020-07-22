@@ -38,8 +38,8 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ProductHolder holder, int position) {
-        Product product = products.get(position);
+    public void onBindViewHolder(@NonNull ProductHolder holder, final int position) {
+        final Product product = products.get(position);
 
         holder.productName.setText(product.getName());
         holder.imgPreview.setImageURI(Uri.parse(product.getImageUrl()));
@@ -49,7 +49,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
             public void onClick(View view) {
                 Context context = view.getContext();
                 Intent productDetailActivityIntent = new Intent(context, ProductDetailActivity.class);
-
+                productDetailActivityIntent.putExtra("index", position);
                 context.startActivity(productDetailActivityIntent);
             }
         });

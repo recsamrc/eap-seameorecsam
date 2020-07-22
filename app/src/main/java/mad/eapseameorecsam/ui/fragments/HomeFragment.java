@@ -47,7 +47,7 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
-    public void loadProducts() {
+    private void loadProducts() {
         RequestQueue queue = Volley.newRequestQueue(getContext());
         String url = "http://ite-rupp.ap-southeast-1.elasticbeanstalk.com/products.php";
 
@@ -62,9 +62,10 @@ public class HomeFragment extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.e("MainActivity: ", "onError: " + error);
+                Log.e("HomeFragment: ", "onError: " + error);
             }
         });
         queue.add(request);
     }
+
 }
