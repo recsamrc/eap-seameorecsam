@@ -1,6 +1,9 @@
 package mad.eapseameorecsam.adapters;
 
+import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +18,7 @@ import java.util.List;
 
 import mad.eapseameorecsam.R;
 import mad.eapseameorecsam.models.Product;
+import mad.eapseameorecsam.ui.ProductDetailActivity;
 
 public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.ProductHolder> {
 
@@ -40,6 +44,15 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         holder.productName.setText(product.getName());
         holder.imgPreview.setImageURI(Uri.parse(product.getImageUrl()));
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Context context = view.getContext();
+                Intent productDetailActivityIntent = new Intent(context, ProductDetailActivity.class);
+
+                context.startActivity(productDetailActivityIntent);
+            }
+        });
     }
 
     @Override
